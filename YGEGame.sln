@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YGELib", "YGELib\YGELib.vcxproj", "{72B3CB33-FD7F-4282-9EE6-79882F179E38}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YGEGame", "YGEGame\YGEGame.vcxproj", "{DBAB68DB-3C98-4A7F-84C9-83B2C2E71DBB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72B3CB33-FD7F-4282-9EE6-79882F179E38} = {72B3CB33-FD7F-4282-9EE6-79882F179E38}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLee", "GLee\GLee.vcxproj", "{02136AE8-367B-4060-BDC7-62D4BC25E08E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72B3CB33-FD7F-4282-9EE6-79882F179E38}.Debug|Win32.ActiveCfg = Debug|Win32
+		{72B3CB33-FD7F-4282-9EE6-79882F179E38}.Debug|Win32.Build.0 = Debug|Win32
+		{72B3CB33-FD7F-4282-9EE6-79882F179E38}.Release|Win32.ActiveCfg = Release|Win32
+		{72B3CB33-FD7F-4282-9EE6-79882F179E38}.Release|Win32.Build.0 = Release|Win32
+		{DBAB68DB-3C98-4A7F-84C9-83B2C2E71DBB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBAB68DB-3C98-4A7F-84C9-83B2C2E71DBB}.Debug|Win32.Build.0 = Debug|Win32
+		{DBAB68DB-3C98-4A7F-84C9-83B2C2E71DBB}.Release|Win32.ActiveCfg = Release|Win32
+		{DBAB68DB-3C98-4A7F-84C9-83B2C2E71DBB}.Release|Win32.Build.0 = Release|Win32
+		{02136AE8-367B-4060-BDC7-62D4BC25E08E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{02136AE8-367B-4060-BDC7-62D4BC25E08E}.Debug|Win32.Build.0 = Debug|Win32
+		{02136AE8-367B-4060-BDC7-62D4BC25E08E}.Release|Win32.ActiveCfg = Release|Win32
+		{02136AE8-367B-4060-BDC7-62D4BC25E08E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

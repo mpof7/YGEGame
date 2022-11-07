@@ -1,0 +1,100 @@
+//YGEGame.cpp
+
+
+#include "Engine.h"
+#include "RenderDevice.h"
+#include "IntroPhase.h"
+#include "SplashPhase.h"
+#include "DemoPhase.h"
+#include "ShaderPhase.h"
+#include <assert.h>
+
+
+
+static void MainGameLoopRun(YGEEngine::Engine &engine);
+
+
+
+
+int SDL_main(int argc, char* argv[]) {
+
+	// Setup phase chain
+	YGEEngine::Phase *splashPhase = new SplashPhase();
+	YGEEngine::Phase *introPhase =  new IntroPhase();
+	YGEEngine::Phase *demoPhase =  new DemoPhase();
+	YGEEngine::Phase *shaderPhase =  new ShaderPhase();
+
+	splashPhase->next = introPhase;
+	introPhase->next = demoPhase;
+	demoPhase->next = shaderPhase;
+	shaderPhase->next = splashPhase;
+
+	// Create engine
+	YGEEngine::Engine engine(introPhase);
+
+	// Run game loop
+	MainGameLoopRun(engine);
+
+	return 0;
+}
+
+
+
+void MainGameLoopRun(YGEEngine::Engine &engine) 
+{
+		
+	// Initialise SDL. Subsystems will be initialised elsewhere
+	int error = SDL_Init(SDL_INIT_TIMER);
+	assert(!error);
+
+	// Create graphics context
+	YGEGraphics::SDLRenderDevice device(800, 600, 32);
+	
+	// Main SDL game loop
+	SDL_Event event;
+
+	for (bool quit = false; !quit;) 
+	{
+
+		//while (engine.IsRunning)
+		//{
+
+		   // Tick game engine
+		   engine.tick(&device);
+
+		//}
+
+
+		// Poll for events
+		while (SDL_PollEvent(&event)) 
+		{
+
+			switch(event.type) 
+			{
+
+				case SDL_KEYDOWN:
+
+					switch (event.key.keysym.sym) 
+					{
+
+						case SDLK_ESCAPE:
+					
+							quit = true;
+							break;
+					}
+					break;
+
+				case SDL_QUIT:
+
+					quit = true;
+					break;
+			}
+
+		}
+
+		// Flush graphics context
+		device.flush();
+	}
+	
+	SDL_Quit();
+}

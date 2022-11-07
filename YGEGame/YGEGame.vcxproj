@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBAB68DB-3C98-4A7F-84C9-83B2C2E71DBB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>YGEGame</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)/GLee;$(SolutionDir)/YGELib;$(SolutionDir)/SDL-1.2.14/include;$(SolutionDir)/freealut-1.1.0/include;$(SolutionDir)/OpenAL 1.1 SDK/include;$(SolutionDir)/bullet-2.76/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;$(SolutionDir)/freealut-1.1.0/lib/alut.lib;$(SolutionDir)/OpenAL 1.1 SDK/libs/Win32/OpenAL32.lib;$(SolutionDir)\bullet-2.76\lib\BulletCollision.lib;$(SolutionDir)\bullet-2.76\lib\BulletDynamics.lib;$(SolutionDir)\bullet-2.76\lib\LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)/GLee;$(SolutionDir)/YGELib;$(SolutionDir)/SDL-1.2.14/include;$(SolutionDir)/freealut-1.1.0/include;$(SolutionDir)/OpenAL 1.1 SDK/include;$(SolutionDir)/bullet-2.76/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;$(SolutionDir)/freealut-1.1.0/lib/alut.lib;$(SolutionDir)/OpenAL 1.1 SDK/libs/Win32/OpenAL32.lib;$(SolutionDir)\bullet-2.76\lib\release\BulletCollision.lib;$(SolutionDir)\bullet-2.76\lib\release\BulletDynamics.lib;$(SolutionDir)\bullet-2.76\lib\release\LinearMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ActorPhase.h" />
+    <ClInclude Include="DemoPhase.h" />
+    <ClInclude Include="ExplosionAnimPhase.h" />
+    <ClInclude Include="FlockAnimPhase.h" />
+    <ClInclude Include="ParticlePhase.h" />
+    <ClInclude Include="includes.h" />
+    <ClInclude Include="SoundPhase.h" />
+    <ClInclude Include="PhysicsActorPhase.h" />
+    <ClInclude Include="ShaderPhase.h" />
+    <ClInclude Include="SpherePhase.h" />
+    <ClInclude Include="InterpolationPhase.h" />
+    <ClInclude Include="SplashPhase.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="threeDActorPhase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActorPhase.cpp" />
+    <ClCompile Include="DemoPhase.cpp" />
+    <ClCompile Include="ExplosionAnimPhase.cpp" />
+    <ClCompile Include="FlockAnimPhase.cpp" />
+    <ClCompile Include="ParticlePhase.cpp" />
+    <ClCompile Include="SoundPhase.cpp" />
+    <ClCompile Include="PhysicsActorPhase.cpp" />
+    <ClCompile Include="ShaderPhase.cpp" />
+    <ClCompile Include="SpherePhase.cpp" />
+    <ClCompile Include="InterpolationPhase.cpp" />
+    <ClCompile Include="SplashPhase.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="threeDActorPhase.cpp" />
+    <ClCompile Include="YGEGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YGELib\YGELib.vcxproj">
+      <Project>{72b3cb33-fd7f-4282-9ee6-79882f179e38}</Project>
+      <Private>true</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\SDL-1.2.14\lib\SDL.lib" />
+    <Library Include="..\SDL-1.2.14\lib\SDLmain.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
