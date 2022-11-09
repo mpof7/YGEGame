@@ -18,7 +18,7 @@ public:
 	bool unload();																						// Unload assets needed by this phase
 
 	// Rendering operations
-	void prerender(YGEGraphics::RenderDevice *device);	
+	void prerender(YGEGraphics::RenderDevice *device);	  //Pre render operation
 	void render(YGEGraphics::RenderDevice *device);
 
 	bool finished();
